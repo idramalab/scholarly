@@ -1,4 +1,4 @@
-# scholarly
+# Emiliano's scholarly fork
 This is a fork of scholarly, a module that allows you to retrieve author and publication information from [Google Scholar](https://scholar.google.com) in a friendly, Pythonic way.
 
 It adds two scripts (see below) and fixes some issues parsing dates.
