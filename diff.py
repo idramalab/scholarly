@@ -19,8 +19,6 @@ update = pd.DataFrame(columns=columns)
 df1 = pd.read_csv(file1) 
 df2 = pd.read_csv(file2) 
 
-#print(len(columns))
-
 for i in range(df1.shape[0]):
 	paper_id = df1.loc[i]['id_citations']
 	paper_scholar = df1.loc[i]['id_scholarcitedby']
@@ -49,4 +47,3 @@ print("Done. Saving to file... " + filename)
 update.to_csv(filename,index=False)
 
 
-#print(df1.loc[df1['id_citations'] == '1wfzUuEAAAAJ:u5HHmVD_uO8C'])
