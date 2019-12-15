@@ -16,7 +16,8 @@ author = next(search_query).fill()
 
 print("Successfully retrieved Scholar profile.")
 
-columns = ['cites', 'title',  'author', 'year', 'cites_per_year', 'eprint', 'pages', 'publisher', 'url', 'id_citations', 'id_scholarcitedby', 'source']
+columns = ['cites', 'title',  'author', 'year', 'cites_per_year', 'eprint', 
+'pages', 'publisher', 'url', 'id_citations', 'id_scholarcitedby', 'source', 'citedByUrl']
 
 profile = pd.DataFrame(columns=columns)
 
@@ -39,7 +40,8 @@ for i in range(len(author.publications)):
 	author.publications[i].bib.get('url',""), 
 	getattr(author.publications[i],'id_citations',""),
 	getattr(author.publications[i],'id_scholarcitedby',""),
-	getattr(author.publications[i],'source',"")
+	getattr(author.publications[i],'source',""),
+	"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=" + getattr(author.publications[i],'id_scholarcitedby',"")
 	], index=profile.columns), ignore_index=True)
 	#print(profile.loc[i])
 
