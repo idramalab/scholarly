@@ -9,7 +9,7 @@ I have written two scripts:
 
 2. profile.py "author name" --> retrieves and saves to csv statistics for each paper of an author that has a google scholar profile
 
-## Scholarly Usage
+## Original Scholarly Usage
 Because `scholarly` does not use an official API, no key is required. Simply:
 
 ```python
