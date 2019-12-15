@@ -42,7 +42,8 @@ for i in range(df2.shape[0]):
 		print("New paper!")
 		update = update.append(pd.Series([df2.loc[i]['cites'], 0, df2.loc[i]['title'],  df2.loc[i]['author'], df2.loc[i]['year'], df2.loc[i]['cites_per_year'], df2.loc[i]['eprint'], df2.loc[i]['pages'], df2.loc[i]['publisher'], df2.loc[i]['url'], df2.loc[i]['id_citations'], df2.loc[i]['id_scholarcitedby'], df2.loc[i]['source'], df2.loc[i]['citedByUrl']], index=update.columns), ignore_index=True)
 
-filename = "update.csv"
+today = datetime.today().strftime('%Y%m%d')
+filename = "update_" + today + ".csv"
 print("Done. Saving to file... " + filename)
 update.to_csv(filename,index=False)
 
