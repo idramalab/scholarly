@@ -26,7 +26,7 @@ num_pubs = len(author.publications)
 print(author_name + " has " + str(num_pubs) + " papers on Scholar.")
 
 for i in range(len(author.publications)):
-	print("Processing " + str(i+1) + "th publication")
+	print("Processing pub " + str(i+1) + "/" + str(num_pubs))
 	author.publications[i].fill()
 	profile = profile.append(pd.Series([
 	getattr(author.publications[i],'citedby', 0),
