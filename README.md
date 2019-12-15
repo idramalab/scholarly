@@ -114,30 +114,10 @@ Just run `scholarly.use_proxy()`. Parameters are an http and an https proxy.
 
 ```
 
-## Installation
-Use `pip` to install from pypi:
-
-```bash
-pip install scholarly
-```
-
-or `pip` to install from github:
-
-```bash
-pip install git+https://github.com/OrganicIrradiation/scholarly.git
-```
-
-or clone the package using git:
-
-```bash
-git clone https://github.com/OrganicIrradiation/scholarly.git
-```
-
-
-## Requirements
+### Requirements
 Requires [arrow](http://crsmithdev.com/arrow/), [Beautiful Soup](https://pypi.python.org/pypi/beautifulsoup4/), [bibtexparser](https://pypi.python.org/pypi/bibtexparser/), and [requests[security]](https://pypi.python.org/pypi/requests/).
 Also [pysocks](https://pypi.org/project/PySocks/) for using a proxy.
 
 
-## License
+### License
 The original code that this project was forked from was released by [Bello Chalmers](https://github.com/lbello/chalmers-web) under a [WTFPL](http://www.wtfpl.net/) license. In keeping with this mentality, all code is released under the [Unlicense](http://unlicense.org/).
