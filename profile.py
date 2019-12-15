@@ -1,6 +1,8 @@
 import scholarly
 import pandas as pd
 import sys
+from datetime import datetime
+
 
 if len(sys.argv) != 2:
 	print("Usage: profile.py \"author name\"")
@@ -22,11 +24,6 @@ num_pubs = len(author.publications)
 
 print(author_name + " has " + str(num_pubs) + " papers on Scholar.")
 
-#for i in range(len(author.publications)):
-#	author.publications[i].fill()
-#	print(author.publications[i])
-#	print('\n\n\n\n\n\n')
-
 for i in range(len(author.publications)):
 	print("Processing " + str(i+1) + "th publication")
 	author.publications[i].fill()
@@ -46,6 +43,7 @@ for i in range(len(author.publications)):
 	], index=profile.columns), ignore_index=True)
 	#print(profile.loc[i])
 
-filename = author_name.replace(" ", "") + ".csv"
+today = datetime.today().strftime('%Y%m%d')
+filename = author_name.replace(" ", "") + "_" + today + ".csv"
 print("Done. Saving to file... " + filename)
 profile.to_csv(filename,index=False)

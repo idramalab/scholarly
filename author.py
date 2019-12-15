@@ -1,6 +1,7 @@
 import scholarly
 import pandas as pd
 import sys
+from datetime import datetime
 
 if len(sys.argv) != 2:
 	print("Usage: author.py \"author name\"")
@@ -34,6 +35,7 @@ getattr(author,'interests',""),
 getattr(author,'url_picture')
 ], index=profile.columns), ignore_index=True)
 
-filename = author_name.replace(" ", "") + "_profile.csv"
+today = datetime.today().strftime('%Y%m%d')
+filename = author_name.replace(" ", "") + "-profile_" + today + ".csv"
 print("Saving to file... " + filename)
 profile.to_csv(filename,index=False)
