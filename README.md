@@ -1,8 +1,15 @@
 # scholarly
-scholarly is a module that allows you to retrieve author and publication information from [Google Scholar](https://scholar.google.com) in a friendly, Pythonic way.
+This is a fork of scholarly, a module that allows you to retrieve author and publication information from [Google Scholar](https://scholar.google.com) in a friendly, Pythonic way.
 
 
 ## Usage
+I have written two scripts:
+
+1. author.py "author name" --> retrieves and saves to csv some statistics of an author that has a google scholar profile
+
+2. profile.py "author name" --> retrieves and saves to csv statistics for each paper of an author that has a google scholar profile
+
+## Scholarly Usage
 Because `scholarly` does not use an official API, no key is required. Simply:
 
 ```python
