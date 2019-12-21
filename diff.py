@@ -29,7 +29,8 @@ for i in range(df1.shape[0]):
 		print("paper disappeared!")
 		update = update.append(pd.Series([0, df1.loc[i]['cites'], df1.loc[i]['title'],  df1.loc[i]['author'], df1.loc[i]['year'], df1.loc[i]['cites_per_year'], df1.loc[i]['eprint'], df1.loc[i]['pages'], df1.loc[i]['publisher'], df1.loc[i]['url'], df1.loc[i]['id_citations'], df1.loc[i]['id_scholarcitedby'], df1.loc[i]['source'], df1.loc[i]['citedByUrl']], index=update.columns), ignore_index=True)
 	elif(cites1 != cites2):
-		print("Paper " + paper_scholar + " " + df1.loc[i]['title'][0:20] + " has gone from " + str(cites1) + " to " + str(cites2) + " cites")
+		print("Paper " + str(paper_scholar) + " " + df1.loc[i]['title'][0:20] + " has gone from " + 
+			str(cites1) + " to " + str(cites2) + " cites")
 		update = update.append(pd.Series([cites2, df1.loc[i]['cites'], df1.loc[i]['title'],  df1.loc[i]['author'], df1.loc[i]['year'], df1.loc[i]['cites_per_year'], df1.loc[i]['eprint'], df1.loc[i]['pages'], df1.loc[i]['publisher'], df1.loc[i]['url'], df1.loc[i]['id_citations'], df1.loc[i]['id_scholarcitedby'], df1.loc[i]['source'], df1.loc[i]['citedByUrl']], index=update.columns), ignore_index=True)
 
 for i in range(df2.shape[0]):
