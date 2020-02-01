@@ -26,7 +26,7 @@ for i in range(df1.shape[0]):
 	#print("Search " + paper_id + " " + df1.loc[i]['title'][0:20] + " with " + str(cites1) + " cites")
 	cites2 = next(iter(df2.loc[df2['id_citations'] == paper_id]['cites']),'no match')
 	if(cites2 == 'no match'):
-		print("paper disappeared!")
+		print("Paper disappeared: " + df1.loc[i]['title'][0:20])
 		update = update.append(pd.Series([0, df1.loc[i]['cites'], df1.loc[i]['title'],  df1.loc[i]['author'], df1.loc[i]['year'], df1.loc[i]['cites_per_year'], df1.loc[i]['eprint'], df1.loc[i]['pages'], df1.loc[i]['publisher'], df1.loc[i]['url'], df1.loc[i]['id_citations'], df1.loc[i]['id_scholarcitedby'], df1.loc[i]['source'], df1.loc[i]['citedByUrl']], index=update.columns), ignore_index=True)
 	elif(cites1 != cites2):
 		print("Paper " + str(paper_scholar) + " " + df1.loc[i]['title'][0:20] + " has gone from " + 
@@ -40,7 +40,7 @@ for i in range(df2.shape[0]):
 	#print("Search " + paper_id + " " + df1.loc[i]['title'][0:20] + " with " + str(cites1) + " cites")
 	cites1 = next(iter(df1.loc[df1['id_citations'] == paper_id]['cites']),'no match')
 	if(cites1 == 'no match'):
-		print("New paper!")
+		print("New paper!" + df2.loc[i]['title'][0:20])
 		update = update.append(pd.Series([df2.loc[i]['cites'], 0, df2.loc[i]['title'],  df2.loc[i]['author'], df2.loc[i]['year'], df2.loc[i]['cites_per_year'], df2.loc[i]['eprint'], df2.loc[i]['pages'], df2.loc[i]['publisher'], df2.loc[i]['url'], df2.loc[i]['id_citations'], df2.loc[i]['id_scholarcitedby'], df2.loc[i]['source'], df2.loc[i]['citedByUrl']], index=update.columns), ignore_index=True)
 
 today = datetime.today().strftime('%Y%m%d')
