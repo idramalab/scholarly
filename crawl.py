@@ -46,6 +46,6 @@ for i in range(len(author['publications'])):
 	print(profile.loc[i])
 
 today = datetime.today().strftime('%Y%m%d')
-filename = author_name.replace(" ", "") + "_" + today + ".csv"
+filename = author_name.replace(" ", "") + "_complete_" + today + ".csv"
 print("Done. Saving to file... " + filename)
 profile.to_csv(filename,index=False)

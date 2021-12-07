@@ -4,7 +4,15 @@
 [![DOI](https://zenodo.org/badge/27442991.svg)](https://zenodo.org/badge/latestdoi/27442991)
 
 
-# scholarly
+# scripts
+
+For now, there are two scripts:
+1. `profile_basic.py`: basic statistics about an author with an existing scholar profile
+2. `crawl.py`: crawls all pubs of an author, with bibliometrics
+
+Both script take in input a name in quotes (e.g., "Emiliano De Cristofaro") and create a csv file.
+
+# scholarly library
 
 scholarly is a module that allows you to retrieve author and publication information from [Google Scholar](https://scholar.google.com) in a friendly, Pythonic way without having to solve CAPTCHAs.
 
