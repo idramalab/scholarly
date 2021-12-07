@@ -3,7 +3,6 @@ import pandas as pd
 import sys
 from datetime import datetime
 
-
 if len(sys.argv) != 2:
 	print("Usage: profile.py \"author name\"")
 	exit()
