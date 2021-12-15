@@ -4,7 +4,7 @@ import sys
 from datetime import datetime
 
 if len(sys.argv) != 2:
-	print("Usage: profile.py \"author name\"")
+	print("Usage: crawl.py \"author name\"")
 	exit()
 
 author_name = str(sys.argv[1])
