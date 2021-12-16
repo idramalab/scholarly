@@ -17,3 +17,6 @@ setup_notes.md
 
 # Keys
 *.key
+
+# CSVs Outputs
+*.csv
