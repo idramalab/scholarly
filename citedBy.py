@@ -25,6 +25,7 @@ papers = pd.DataFrame(columns=columns)
 pubs = []
 #citations = [citation['bib']['title'] for citation in scholarly.citedby(paper)]
 for cit in scholarly.citedby(seed):
+	print(cit['bib']['title'])
 	pub = scholarly.fill(cit)
 	pubs.append(pub)
 #	print(pub['bib'].get('title'))
