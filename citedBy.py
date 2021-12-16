@@ -43,15 +43,14 @@ pubs = []
 
 for cit in scholarly.citedby(seed):
 	print(cit['bib']['title'])
-	#pub = scholarly.fill(cit)
-	#print("Filled")
+	pub = scholarly.fill(cit)
+	print("Filled")
 	pubs.append(cit)
 	#s = random.uniform(5,15)
 	#print("Sleeping for " + s + " seconds")
 	#time.sleep(random.uniform(5,15))
-#	print(pub['bib'].get('title'))
 
-print("Done with citedby retrieval. Now saving shit.")
+print("Done with citedby retrieval. Now saving to file.")
 
 for i in range(len(pubs)):
 	#print("Processing pub " + str(i+1) + "/" + str(len(pubs)))
