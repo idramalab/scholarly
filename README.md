@@ -8,7 +8,8 @@
 
 For now, there are two scripts:
 1. `profile_basic.py`: basic statistics about an author with an existing scholar profile
-2. `crawl.py`: crawls all pubs of an author, with bibliometrics
+2. `crawl.py`: saves all pubs of an author, with bibliometrics
+3. `citedBy.py`: saves all papers citing a paper; needs a proxy API key (currently only ScraperAPI supported)
 
 Both script take in input a name in quotes (e.g., "Emiliano De Cristofaro") and create a csv file.
 

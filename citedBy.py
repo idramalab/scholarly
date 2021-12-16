@@ -12,9 +12,9 @@ if len(sys.argv) != 2:
 	exit()
 
 
-f = open("proxy-license.key", "r")
+f = open("proxy-api.key", "r")
 lic = f.read()
-print("Proxy License key is " + lic)
+print("Proxy API key is " + lic)
 
 pg = ProxyGenerator()
 success = pg.ScraperAPI(lic)
@@ -66,6 +66,6 @@ for i in range(len(pubs)):
 	], index=papers.columns), ignore_index=True)
 
 today = datetime.today().strftime('%Y%m%d')
-filename = paper_title.replace(" ", "") + "_complete_" + today + ".csv"
+filename = paper_title.replace(" ", "") + ".csv"
 print("Done. Saving to file... " + filename)
 papers.to_csv(filename,index=False)
