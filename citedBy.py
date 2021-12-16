@@ -29,6 +29,8 @@ for cit in scholarly.citedby(seed):
 	pubs.append(pub)
 #	print(pub['bib'].get('title'))
 
+print("Done with citedby retrieval. Now saving shit.")
+
 for i in range(len(pubs)):
 	print("Processing pub " + str(i+1) + "/" + str(len(pubs)))
 	pub = pubs[i]
