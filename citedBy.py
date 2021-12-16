@@ -11,6 +11,12 @@ if len(sys.argv) != 2:
 	print("Usage: citedBy.py \"Paper Title\"")
 	exit()
 
+pg = ProxyGenerator()
+success = pg.ScraperAPI("2f390977f8a7b3df40d092926587b667")
+scholarly.use_proxy(pg)
+print("Now using Proxy")
+
+
 paper_title = str(sys.argv[1])
 print("Searching " + paper_title + " on Google Scholar. This might take a while...")
 
@@ -29,10 +35,6 @@ papers = pd.DataFrame(columns=columns)
 pubs = []
 #citations = [citation['bib']['title'] for citation in scholarly.citedby(paper)]
 
-pg = ProxyGenerator()
-success = pg.ScraperAPI("2f390977f8a7b3df40d092926587b667")
-scholarly.use_proxy(pg)
-print("Now using Proxy")
 
 for cit in scholarly.citedby(seed):
 	print(cit['bib']['title'])
@@ -47,7 +49,7 @@ for cit in scholarly.citedby(seed):
 print("Done with citedby retrieval. Now saving shit.")
 
 for i in range(len(pubs)):
-	print("Processing pub " + str(i+1) + "/" + str(len(pubs)))
+	#print("Processing pub " + str(i+1) + "/" + str(len(pubs)))
 	pub = pubs[i]
 	papers = papers.append(pd.Series([
 	pub.get('num_citations'),
